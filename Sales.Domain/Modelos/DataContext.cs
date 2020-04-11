@@ -7,6 +7,8 @@
 		{
 
 		}
+
+		public System.Data.Entity.DbSet<Sales.Common.Modelos.Productos> Productos { get; set; }
 	}
 
 }
