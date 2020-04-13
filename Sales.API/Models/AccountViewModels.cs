@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sales.API.Models
 {
-    // Modelos devueltos por las acciones de AccountController.
+    // Models returned by AccountController actions.
 
     public class ExternalLoginViewModel
     {

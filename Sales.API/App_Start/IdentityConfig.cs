@@ -7,7 +7,7 @@ using Sales.API.Models;
 
 namespace Sales.API
 {
-    // Configure el administrador de usuarios de aplicación que se usa en esta aplicación. UserManager se define en ASP.NET Identity y se usa en la aplicación.
+    // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
 
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
@@ -19,13 +19,13 @@ namespace Sales.API
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
-            // Configure la lógica de validación de nombres de usuario
+            // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
                 AllowOnlyAlphanumericUserNames = false,
                 RequireUniqueEmail = true
             };
-            // Configure la lógica de validación de contraseñas
+            // Configure validation logic for passwords
             manager.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 6,

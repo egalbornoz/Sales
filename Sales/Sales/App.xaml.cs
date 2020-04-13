@@ -1,32 +1,33 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Sales
 {
-	public partial class App : Application
-	{
-		public App()
-		{
-			InitializeComponent();
+    using Views;
 
-			MainPage = new MainPage();
-		}
+    public partial class App : Application
+    {
+        public App()
+        {
+            InitializeComponent();
 
-		protected override void OnStart()
-		{
-			// Handle when your app starts
-		}
+            MainPage = new NavigationPage(new ProductsPage());
+        }
 
-		protected override void OnSleep()
-		{
-			// Handle when your app sleeps
-		}
+        protected override void OnStart()
+        {
+            // Handle when your app starts
+        }
 
-		protected override void OnResume()
-		{
-			// Handle when your app resumes
-		}
-	}
+        protected override void OnSleep()
+        {
+            // Handle when your app sleeps
+        }
+
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
+        }
+    }
 }

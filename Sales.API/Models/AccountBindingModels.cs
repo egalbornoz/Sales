@@ -4,12 +4,12 @@ using Newtonsoft.Json;
 
 namespace Sales.API.Models
 {
-    // Modelos usados como parámetros para las acciones de AccountController.
+    // Models used as parameters to AccountController actions.
 
     public class AddExternalLoginBindingModel
     {
         [Required]
-        [Display(Name = "Token de acceso externo")]
+        [Display(Name = "External access token")]
         public string ExternalAccessToken { get; set; }
     }
 
@@ -17,68 +17,68 @@ namespace Sales.API.Models
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Contraseña actual")]
+        [Display(Name = "Current password")]
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "El número de caracteres de {0} debe ser al menos {2}.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Nueva contraseña")]
+        [Display(Name = "New password")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmar la nueva contraseña")]
-        [Compare("NewPassword", ErrorMessage = "La nueva contraseña y la contraseña de confirmación no coinciden.")]
+        [Display(Name = "Confirm new password")]
+        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
     public class RegisterBindingModel
     {
         [Required]
-        [Display(Name = "Correo electrónico")]
+        [Display(Name = "Email")]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "El número de caracteres de {0} debe ser al menos {2}.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Contraseña")]
+        [Display(Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmar contraseña")]
-        [Compare("Password", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
+        [Display(Name = "Confirm password")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
     public class RegisterExternalBindingModel
     {
         [Required]
-        [Display(Name = "Correo electrónico")]
+        [Display(Name = "Email")]
         public string Email { get; set; }
     }
 
     public class RemoveLoginBindingModel
     {
         [Required]
-        [Display(Name = "Proveedor de inicio de sesión")]
+        [Display(Name = "Login provider")]
         public string LoginProvider { get; set; }
 
         [Required]
-        [Display(Name = "Clave de proveedor")]
+        [Display(Name = "Provider key")]
         public string ProviderKey { get; set; }
     }
 
     public class SetPasswordBindingModel
     {
         [Required]
-        [StringLength(100, ErrorMessage = "El número de caracteres de {0} debe ser al menos {2}.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Nueva contraseña")]
+        [Display(Name = "New password")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmar la nueva contraseña")]
-        [Compare("NewPassword", ErrorMessage = "La nueva contraseña y la contraseña de confirmación no coinciden.")]
+        [Display(Name = "Confirm new password")]
+        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 }

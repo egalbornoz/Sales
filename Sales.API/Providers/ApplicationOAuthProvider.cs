@@ -35,7 +35,7 @@ namespace Sales.API.Providers
 
             if (user == null)
             {
-                context.SetError("invalid_grant", "El nombre de usuario o la contraseña no son correctos.");
+                context.SetError("invalid_grant", "The user name or password is incorrect.");
                 return;
             }
 
@@ -62,7 +62,7 @@ namespace Sales.API.Providers
 
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
-            // La credenciales de la contraseña del propietario del recurso no proporcionan un id. de cliente.
+            // Resource owner password credentials does not provide a client ID.
             if (context.ClientId == null)
             {
                 context.Validated();
